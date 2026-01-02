@@ -1,0 +1,169 @@
+/* Import fonts first to satisfy Vite/CSS ordering rules.
+  Moved here to prevent the "@import must precede all other statements" build error. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+ * FloodSense Delhi - Design System
+ * A civic-tech themed color palette for flood monitoring
+ */
+
+@layer base {
+  :root {
+    /* Primary - Deep Navy Blue (water theme, trustworthy) */
+    --primary: 213 56% 24%;
+    --primary-foreground: 210 40% 98%;
+    
+    /* Background - Clean slate gray */
+    --background: 210 20% 98%;
+    --foreground: 213 56% 15%;
+
+    /* Cards - White with subtle warmth */
+    --card: 0 0% 100%;
+    --card-foreground: 213 56% 15%;
+
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 56% 15%;
+
+    /* Secondary - Soft blue-gray for secondary elements */
+    --secondary: 210 25% 93%;
+    --secondary-foreground: 213 56% 24%;
+
+    /* Muted - For subtle backgrounds and disabled states */
+    --muted: 210 20% 96%;
+    --muted-foreground: 213 15% 50%;
+
+    /* Accent - Teal for interactive elements */
+    --accent: 185 62% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Destructive - Emergency red for high risk */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and Input */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 185 62% 45%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 213 56% 24%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 185 62% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 213 56% 30%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 213 56% 35%;
+    --sidebar-ring: 185 62% 45%;
+  }
+
+  .dark {
+    --background: 213 56% 10%;
+    --foreground: 210 40% 98%;
+    --card: 213 56% 15%;
+    --card-foreground: 210 40% 98%;
+    --popover: 213 56% 15%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 185 62% 45%;
+    --primary-foreground: 213 56% 10%;
+    --secondary: 213 56% 20%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 213 56% 20%;
+    --muted-foreground: 210 30% 60%;
+    --accent: 185 62% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 213 56% 25%;
+    --input: 213 56% 25%;
+    --ring: 185 62% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer utilities {
+  /* Leaflet map overrides */
+  .leaflet-container {
+    @apply rounded-lg;
+    font-family: 'Inter', system-ui, sans-serif !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    @apply rounded-lg shadow-lg;
+  }
+
+  .leaflet-popup-content {
+    margin: 12px !important;
+  }
+}
+
+/* Animation keyframes */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slide-in 0.4s ease-out forwards;
+}

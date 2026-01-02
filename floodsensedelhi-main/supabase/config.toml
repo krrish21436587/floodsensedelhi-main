@@ -1,0 +1,13 @@
+project_id = "qzpbakdmoetpsmwjuztm"
+
+[functions.ai-predict-flood]
+verify_jwt = false
+
+[functions.analyze-flood-risk]
+verify_jwt = false
+
+[functions.predict-flood-risk]
+verify_jwt = false
+
+[functions.weather]
+verify_jwt = false
