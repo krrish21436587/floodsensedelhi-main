@@ -34,7 +34,7 @@ You can run the project locally to demo the app. Follow the steps below.
 Open a terminal in the project root and run:
 
 ```bash
-npm install
+cd "folder path"; npm install
 ```
 
 ### Run in development mode (for judges)
@@ -42,7 +42,7 @@ npm install
 Start the dev server and open the app:
 
 ```bash
-npm run dev
+cd "folder path"; npm run dev
 ```
 
 Vite in this project starts on port 8080 by default. When the server is ready it prints a local URL such as:
