@@ -9,7 +9,7 @@ The application combines **weather data, historical trends, predictive logic, an
 ## 🚀 Live Demo
 
 🔗 **Live Deployment:**  
-👉 https://floodsensedelhi.vercel.app/
+👉 (https://floodsense-delhi-eight.vercel.app/)
 
 - Deployed on **Vercel** with GitHub-integrated CI/CD
 - Publicly accessible (no login required)
